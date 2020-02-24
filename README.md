@@ -7,12 +7,30 @@
 
 ## 使用说明
 
-首先创建文件夹`bootstrap/cache`，然后创建`bootstrap/cache/.gitignore`，输入以下内容
+首先执行下面的命令加载包
+
+```bash
+composer require mowangjuanzi/lumen-cache
+```
+
+然后打开`bootstrap/app.php`并注册服务提供者：
+
+```php
+$app->register(Mowangjuanzi\Cache\LumenServiceProvider::class);
+```
+
+## 后续操作
+
+**防止缓存文件被`git`追踪**
+
+创建文件夹`bootstrap/cache`，然后创建`bootstrap/cache/.gitignore`，输入以下内容
 
 ```gitignore
 *
 !.gitignore
 ```
+
+**加载路由**
 
 接下来修改`bootstrap/app.php` 中加载路由的地方。
 
@@ -40,7 +58,7 @@ if (file_exists($app->basePath("bootstrap/cache/router.php"))) {
 }
 ```
 
-这样就完成了。
+## 命令执行和查看
 
 然后我们就可以查看命令：
 
@@ -71,4 +89,23 @@ Available commands:
   route:list          List all registered routes
 ```
 
+缓存路由
+
+```bash
+php artisan router:cache
+```
+
+清除路由
+
+```bash
+php artisan router:clear
+```
+
+路由列表(待完成)
+
+```bash
+php artisan router:list
+```
+
+## 反馈
 有什么问题可以来 issus.
