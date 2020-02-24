@@ -1,0 +1,11 @@
+<?php
+
+use Illuminate\Container\Container;
+
+$app = Container::getInstance();
+
+$router = {{routes}};
+
+$reflection_property = new \ReflectionProperty($app->router, "routes");
+$reflection_property->setAccessible(true);
+$reflection_property->setValue($app->router, $router);

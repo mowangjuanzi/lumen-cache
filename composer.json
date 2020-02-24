@@ -1,0 +1,14 @@
+{
+    "name": "mowangjuanzi/lumen-cache",
+    "description": "lumen框架的缓存",
+    "require": {
+        "laravel/lumen-framework": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mowangjuanzi\\Cache\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
